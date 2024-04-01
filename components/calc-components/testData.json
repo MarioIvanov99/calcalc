@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Apple",
+    "isCountable": true,
+    "amount": 1,
+    "weight": 150,
+    "calories": 95.7
+  },
+  {
+    "id": 2,
+    "name": "Banana",
+    "isCountable": true,
+    "amount": 1,
+    "weight": 120,
+    "calories": 105.3
+  },
+  {
+    "id": 3,
+    "name": "Broccoli",
+    "isCountable": true,
+    "amount": 1,
+    "weight": 91,
+    "calories": 50.9
+  },
+  {
+    "id": 4,
+    "name": "Chicken Breast",
+    "isCountable": true,
+    "amount": 1,
+    "weight": 150,
+    "calories": 165.2
+  },
+  {
+    "id": 5,
+    "name": "Salmon",
+    "isCountable": true,
+    "amount": 1,
+    "weight": 113,
+    "calories": 208.6
+  },
+  {
+    "id": 6,
+    "name": "Egg",
+    "isCountable": true,
+    "amount": 1,
+    "weight": 50,
+    "calories": 78.4
+  },
+  {
+    "id": 7,
+    "name": "Spinach",
+    "isCountable": true,
+    "amount": 1,
+    "weight": 30,
+    "calories": 6.7
+  },
+  {
+    "id": 8,
+    "name": "Peanut Butter",
+    "isCountable": true,
+    "amount": 1,
+    "weight": 32,
+    "calories": 188.9
+  },
+  {
+    "id": 9,
+    "name": "Rice",
+    "isCountable": true,
+    "amount": 1,
+    "weight": 150,
+    "calories": 204.3
+  },
+  {
+    "id": 10,
+    "name": "Olive Oil",
+    "isCountable": false,
+    "amount": 1,
+    "weight": 14,
+    "calories": 123.8
+  }
+]
