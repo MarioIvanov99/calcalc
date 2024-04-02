@@ -6,16 +6,16 @@
  */
 
 import React from 'react';
-import {Text, View} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 import Header from './components/Header';
 import Calculator from './components/calc-components/Calculator';
 
 function App(): React.JSX.Element {
   return (
-    <View>
+    <ScrollView>
       <Header />
       <Calculator />
-    </View>
+    </ScrollView>
   );
 }
 

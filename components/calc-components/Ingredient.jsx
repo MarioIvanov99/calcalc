@@ -2,21 +2,22 @@ import React, {useState} from 'react';
 
 import {TextInput, Text, View} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
-import data from './testData.json';
 
 export default function Ingredient(props) {
   const [selectedItem, setSelectedItem] = useState(null);
   const [itemAmount, onChangeAmount] = useState('');
   const [itemWeight, onChangeWeight] = useState('');
   const [calories, setCalories] = useState(0);
+  const [oldCal, setOldCal] = useState(0);
 
   const handleChange = itemName => {
-    const selectedItem = data.find(item => item.name === itemName);
+    const selectedItem = props.data.find(item => item.name === itemName);
     setSelectedItem(selectedItem);
-    console.log(selectedItem);
+    console.log(props.optionStrings);
   };
 
   function calculateCalories() {
+    setOldCal(calories);
     setCalories(
       parseInt(itemAmount) *
         (parseFloat(itemWeight) / selectedItem.weight) *
@@ -24,14 +25,23 @@ export default function Ingredient(props) {
     );
   }
 
-  const optionStrings = selectedItem ? [] : ['Select Item'];
-
-  for (let i = 0; i < data.length; i++) {
-    optionStrings.push(data[i].name);
+  function addDelta() {
+    props.onUpdate(calories - oldCal);
   }
 
-  const options = optionStrings.map(option => {
-    return <Picker.Item label={option} value={option} />;
+  // function updateOptions() {
+  //   const tempArray = props.optionStrings
+  //   props.onOptionChange();
+  // }
+
+  const options = props.optionStrings.map(option => {
+    return (
+      <Picker.Item
+        key={props.optionStrings.indexOf(option)}
+        label={option}
+        value={option}
+      />
+    );
   });
 
   React.useEffect(() => {
@@ -40,13 +50,20 @@ export default function Ingredient(props) {
 
   React.useEffect(() => {
     if (selectedItem) {
-      console.log(`This ${selectedItem.amount} ${selectedItem.weight}`);
       onChangeAmount(`${selectedItem.amount}`);
       onChangeWeight(`${selectedItem.weight}`);
-      console.log(itemWeight);
+      setOldCal(calories);
       setCalories(selectedItem.calories);
+
+      props.onUpdateSelections(prevArray => [...prevArray, selectedItem.name]);
+      //updateOptions();
     }
   }, [selectedItem]);
+
+  React.useEffect(() => {
+    console.log(`Calroies: ${calories} \n Old Calroies: ${oldCal}`);
+    addDelta();
+  }, [calories]);
 
   return (
     <View>
