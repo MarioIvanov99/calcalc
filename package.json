@@ -14,6 +14,7 @@
     "@types/react-native": "^0.73.0",
     "react": "18.2.0",
     "react-native": "0.73.6",
+    "react-native-dropdown-picker": "^5.4.6",
     "react-native-uuid": "^2.0.2"
   },
   "devDependencies": {

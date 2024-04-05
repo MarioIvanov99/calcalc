@@ -12,10 +12,10 @@ import Calculator from './components/calc-components/Calculator';
 
 function App(): React.JSX.Element {
   return (
-    <ScrollView>
+    <View>
       <Header />
       <Calculator />
-    </ScrollView>
+    </View>
   );
 }
 
