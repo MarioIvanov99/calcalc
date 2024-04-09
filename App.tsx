@@ -8,13 +8,13 @@
 import React from 'react';
 import {ScrollView, Text, View} from 'react-native';
 import Header from './components/Header';
-import Calculator from './components/calc-components/Calculator';
+import Hero from './components/Hero';
 
 function App(): React.JSX.Element {
   return (
     <View>
       <Header />
-      <Calculator />
+      <Hero />
     </View>
   );
 }
